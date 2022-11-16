@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block  CodigoDinamico %}
+
+<form action="" method="get"> {% csrf_token %}
+
+    
+    <center><h2>Busca por apellido</h2></center>
+
+    <br>Ingresa el apellido: <input type="text" name="apellido" id="apellido">
+
+    <br><input type="submit" value="Buscar">
+
+
+</form>
+
+    {% if alumno %}
+
+        <ul>
+        {% for alu in alumno %}
+
+            <br><li>Apellido {{alu.apellido}} Nombre {{alu.nombre}} Edad {{alu.edad}} Materia {{alu.materia}}</li>
+    
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No hay datos</p>
+    {% endif %}
+
+{% endblock %}

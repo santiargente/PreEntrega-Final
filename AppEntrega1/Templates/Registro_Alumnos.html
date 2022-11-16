@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block  CodigoDinamico %}
+
+<form action="" method="post"> {% csrf_token %}
+
+    
+
+    <center><br><h2>Registrate como alumno!</h2></br></center>
+
+    <table>
+
+        {{formulario.as_table}}
+
+    </table>
+
+    
+    <br><button type="submit" value="Enviar">Registrate</button>
+
+
+</form>
+
+{% endblock %}
